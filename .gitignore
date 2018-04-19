@@ -1,0 +1,6 @@
+.DS_Store
+*.swp
+*.log
+node_modules
+test-results
+.jest-cache
