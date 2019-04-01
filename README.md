@@ -8,6 +8,9 @@
 This [Webpack](https://github.com/webpack/webpack) loader uses [purgecss](https://github.com/FullHuman/purgecss)
 to strip unused selectors from your CSS.
 
+> Want to get paid for your contributions to `purgecss-loader`?
+> Send your resume to oneamex.careers@aexp.com
+
 ## Installation
 
 ```
