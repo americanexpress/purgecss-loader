@@ -84,7 +84,7 @@ const runLoader = ({
 
 describe('purgecss loader', () => {
   it('should strip unused classes', () => {
-    expect.assertions(3);
+    expect.assertions(2);
     return runLoader()
       .then((stats) => {
         const { modules } = stats.toJson();
@@ -94,7 +94,6 @@ describe('purgecss loader', () => {
         const output = modules[cssModuleIndex].source;
         expect(output).not.toContain('isNotUsed');
         expect(output).toContain('isUsed');
-        expect(output).toMatchSnapshot();
       });
   });
 });
