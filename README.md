@@ -1,25 +1,43 @@
-# purgecss-loader
+
+<h1 align="center">
+  <img src='https://github.com/americanexpress/purgecss-loader/raw/master/purgecss-loader.png' alt="purgecss-loader - One Amex" width='50%'/>
+</h1>
 
 [![npm version](https://badge.fury.io/js/%40americanexpress%2Fpurgecss-loader.svg)](https://badge.fury.io/js/%40americanexpress%2Fpurgecss-loader)
 [![Build Status](https://travis-ci.org/americanexpress/purgecss-loader.svg?branch=master)](https://travis-ci.org/americanexpress/purgecss-loader)
 
-> Purgecss loader for webpack
-
-This [Webpack](https://github.com/webpack/webpack) loader uses [purgecss](https://github.com/FullHuman/purgecss)
+> This [Webpack](https://github.com/webpack/webpack) loader uses [purgecss](https://github.com/FullHuman/purgecss)
 to strip unused selectors from your CSS.
+
+## 👩‍💻 Hiring 👨‍💻
 
 > Want to get paid for your contributions to `purgecss-loader`?
 > Send your resume to oneamex.careers@aexp.com
 
-## Installation
+## 📖 Table of Contents
+
+* [Features](#-features)
+* [Usage](#-usage)
+* [API](#%EF%B8%8F-api)
+* [License](#%EF%B8%8F-license)
+* [Code Of Conduct](#%EF%B8%8F-code-of-conduct)
+* [Contributing](#-contributing)
+
+## ✨ Features
+
+* Ability to remove CSS modules
+* Ability to remove plain CSS declarations
+* Reduce bundle size
+
+## 🤹‍ Usage
 
 ```
 npm install -D @americanexpress/purgecss-loader
 ```
 
-## Usage
+## 🎛️ API
 
-Configure as follows:
+### Configure as follows:
 
 ```js
 module.exports = {
@@ -54,17 +72,28 @@ You should use this with the [`css-loader`](https://github.com/webpack-contrib/c
 as seen above. However, it is not required that you use CSS modules. That is in
 the example to express this loader's compatibility.
 
-## Options
+### Options
 
 | Property        | Description                       | Required |
 |-----------------|-----------------------------------|----------|
 | `paths`         | An array of file [glob] patterns  | `true`   |
-| `extractors   ` | An array of [purgecss extractors] | `false`  |
+| `extractors`    | An array of [purgecss extractors] | `false`  |
 
 [glob]: https://github.com/isaacs/node-glob
 [purgecss extractors]: https://www.purgecss.com/extractors.html
 
-## Contributing
+## 🗝️ License
+
+Any contributions made under this project will be governed by the
+[Apache License 2.0](./LICENSE.txt).
+
+## 🗣️ Code of Conduct
+
+This project adheres to the [American Express Community Guidelines](./CODE_OF_CONDUCT.md).
+By participating, you are expected to honor these guidelines.
+
+## 🏆 Contributing
+
 We welcome Your interest in the American Express Open Source Community on Github.
 Any Contributor to any Open Source Project managed by the American Express Open
 Source Community must accept and sign an Agreement indicating agreement to the
@@ -75,11 +104,3 @@ out the Agreement](https://cla-assistant.io/americanexpress/purgecss-loader).
 
 Please feel free to open pull requests and see [CONTRIBUTING.md](./CONTRIBUTING.md)
 for commit formatting details.
-
-## License
-Any contributions made under this project will be governed by the
-[Apache License 2.0](./LICENSE.txt).
-
-## Code of Conduct
-This project adheres to the [American Express Community Guidelines](./CODE_OF_CONDUCT.md).
-By participating, you are expected to honor these guidelines.
