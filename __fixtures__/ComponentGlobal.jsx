@@ -12,24 +12,8 @@
  * the License.
  */
 
-const { PurgeCSS } = require('purgecss');
-const { getOptions } = require('loader-utils');
+// eslint-disable-next-line import/no-unresolved, import/extensions
+import React from 'react';
+import './root.scss';
 
-module.exports = async function purifyCssLoader(content) {
-  const {
-    paths, extractors = [], fontFace = false, keyframes = false, variables = false, whitelist,
-    whitelistPatterns, whitelistPatternsChildren,
-  } = getOptions(this);
-  const purgeCSSResult = await new PurgeCSS().purge({
-    content: paths,
-    css: [{ raw: content }],
-    extractors,
-    fontFace,
-    keyframes,
-    variables,
-    whitelist,
-    whitelistPatterns,
-    whitelistPatternsChildren,
-  });
-  return purgeCSSResult[0].css;
-};
+export default () => <p className="isUsed">Hello, world</p>;

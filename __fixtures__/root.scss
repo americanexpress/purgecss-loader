@@ -12,24 +12,11 @@
  * the License.
  */
 
-const { PurgeCSS } = require('purgecss');
-const { getOptions } = require('loader-utils');
-
-module.exports = async function purifyCssLoader(content) {
-  const {
-    paths, extractors = [], fontFace = false, keyframes = false, variables = false, whitelist,
-    whitelistPatterns, whitelistPatternsChildren,
-  } = getOptions(this);
-  const purgeCSSResult = await new PurgeCSS().purge({
-    content: paths,
-    css: [{ raw: content }],
-    extractors,
-    fontFace,
-    keyframes,
-    variables,
-    whitelist,
-    whitelistPatterns,
-    whitelistPatternsChildren,
-  });
-  return purgeCSSResult[0].css;
-};
+:global {
+  .isUsed {
+    color: #00175a;
+  }
+  .notUsed {
+    color: red;
+  }
+}

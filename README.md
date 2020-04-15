@@ -41,6 +41,7 @@ module.exports = {
             loader: '@americanexpress/purgecss-loader',
             options: {
               paths: [path.join(somePath, 'src/**/*.{js,jsx}')],
+              whitelistPatternsChildren: [/:global$/],
             },
           },
         ],
@@ -59,10 +60,17 @@ the example to express this loader's compatibility.
 | Property        | Description                       | Required |
 |-----------------|-----------------------------------|----------|
 | `paths`         | An array of file [glob] patterns  | `true`   |
-| `extractors   ` | An array of [purgecss extractors] | `false`  |
+| `extractors` | An array of [purgecss extractors] | `false`  |
+| `fontFace`   | `boolean` (default: false) see [options]     | `false`  |
+| `keyframes`  | `boolean` (default: false) see [options] | `false`  |
+| `variables`  | `boolean` (default: false) see [options] | `false`  |
+| `whitelist`  | `string[]` see [options]| `false`  |
+| `whitelistPatterns` | `Array<RegExp>` see [options] | `false`  |
+| `whitelistPatternsChildren` | `Array<RegExp>` see [options] | `false`  |
 
 [glob]: https://github.com/isaacs/node-glob
 [purgecss extractors]: https://www.purgecss.com/extractors.html
+[options]: https://purgecss.com/configuration.html#options
 
 ## Contributing
 We welcome Your interest in the American Express Open Source Community on Github.
