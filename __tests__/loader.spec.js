@@ -43,7 +43,7 @@ const runLoader = ({
           }],
         },
         {
-          test: /\.css$/,
+          test: /\.s?css$/,
           use: [
             { loader: 'style-loader' },
             {
@@ -57,6 +57,7 @@ const runLoader = ({
               loader: path.resolve(__dirname, '../loader.js'),
               options: {
                 paths: [path.resolve(__dirname, '../__fixtures__/**/*.{js,jsx}')],
+                whitelistPatternsChildren: [/:global$/],
               },
             },
           ],
@@ -83,17 +84,26 @@ const runLoader = ({
 };
 
 describe('purgecss loader', () => {
-  it('should strip unused classes', () => {
-    expect.assertions(2);
-    return runLoader()
-      .then((stats) => {
-        const { modules } = stats.toJson();
-        const cssModuleIndex = findIndex(modules, {
-          name: '../node_modules/css-loader??ref--5-1!../loader.js??ref--5-2!../__fixtures__/styles.css',
-        });
-        const output = modules[cssModuleIndex].source;
-        expect(output).not.toContain('isNotUsed');
-        expect(output).toContain('isUsed');
-      });
+  it('should strip unused classes', async () => {
+    const stats = await runLoader();
+    const { modules } = stats.toJson();
+    const cssModuleIndex = findIndex(modules, {
+      name: '../node_modules/css-loader??ref--5-1!../loader.js??ref--5-2!../__fixtures__/styles.css',
+    });
+    const output = modules[cssModuleIndex].source;
+    expect(output).not.toContain('isNotUsed');
+    expect(output).toContain('isUsed');
+  });
+
+  it('should not strip global classes', async () => {
+    const componentEntry = { entry: '../__fixtures__/ComponentGlobal.jsx' };
+    const stats = await runLoader(componentEntry);
+    const { modules } = stats.toJson();
+    const cssModuleIndex = findIndex(modules, {
+      name: '../node_modules/css-loader??ref--5-1!../loader.js??ref--5-2!../__fixtures__/root.scss',
+    });
+    const output = modules[cssModuleIndex].source;
+    expect(output).not.toContain('isNotUsed');
+    expect(output).toContain('isUsed');
   });
 });

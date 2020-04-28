@@ -12,14 +12,24 @@
  * the License.
  */
 
-const PurgeCss = require('purgecss');
+const { PurgeCSS } = require('purgecss');
 const { getOptions } = require('loader-utils');
 
-module.exports = function purifyCssLoader(content) {
-  const { paths, extractors } = getOptions(this);
-  return new PurgeCss({
+module.exports = async function purifyCssLoader(content) {
+  const {
+    paths, extractors = [], fontFace = false, keyframes = false, variables = false, whitelist,
+    whitelistPatterns, whitelistPatternsChildren,
+  } = getOptions(this);
+  const purgeCSSResult = await new PurgeCSS().purge({
     content: paths,
     css: [{ raw: content }],
     extractors,
-  }).purge()[0].css;
+    fontFace,
+    keyframes,
+    variables,
+    whitelist,
+    whitelistPatterns,
+    whitelistPatternsChildren,
+  });
+  return purgeCSSResult[0].css;
 };
