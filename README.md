@@ -1,10 +1,10 @@
 
 <h1 align="center">
-  <img src='https://github.com/americanexpress/purgecss-loader/raw/master/purgecss-loader.png' alt="purgecss-loader - One Amex" width='50%'/>
+  <img src='https://github.com/americanexpress/purgecss-loader/raw/main/purgecss-loader.png' alt="purgecss-loader - One Amex" width='50%'/>
 </h1>
 
 [![npm version](https://badge.fury.io/js/%40americanexpress%2Fpurgecss-loader.svg)](https://badge.fury.io/js/%40americanexpress%2Fpurgecss-loader)
-[![Build Status](https://travis-ci.org/americanexpress/purgecss-loader.svg?branch=master)](https://travis-ci.org/americanexpress/purgecss-loader)
+![Health Check](https://github.com/americanexpress/purgecss-loader/workflows/Health%20Check/badge.svg)
 
 > This [Webpack](https://github.com/webpack/webpack) loader uses [purgecss](https://github.com/FullHuman/purgecss)
 to strip unused selectors from your CSS.
