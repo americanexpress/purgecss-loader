@@ -4,12 +4,13 @@
   "description": "Webpack loader for removing unused CSS",
   "main": "loader.js",
   "scripts": {
-    "prepublish": "npm test",
-    "lint": "eslint ./ --ignore-path .gitignore --ext .js",
-    "test": "jest && npm run test:git-history",
-    "test:git-history": "commitlint --from origin/master --to HEAD",
+    "prepare": "npm test",
+    "test": "npm run test:lint && npm run test:unit",
+    "test:lint": "eslint ./ --ignore-path .gitignore --ext .js",
     "test:lockfile": "lockfile-lint -p package-lock.json -t npm -a npm -o https: -c -i",
-    "posttest": "npm run lint && npm run test:lockfile"
+    "test:git-history": "commitlint --from origin/main --to HEAD",
+    "test:unit": "jest",
+    "posttest": "npm run test:git-history && npm run test:lockfile"
   },
   "repository": {
     "type": "git",
@@ -44,7 +45,11 @@
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
     "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
     "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.1.1",
+    "@semantic-release/npm": "^7.0.6",
+    "@semantic-release/release-notes-generator": "^9.0.1",
     "amex-jest-preset": "^6.1.0",
     "babel-eslint": "^8.2.3",
     "babel-loader": "^7.1.4",
@@ -55,10 +60,10 @@
     "eslint-config-amex": "^7.1.1",
     "husky": "^3.1.0",
     "jest": "^23.6.0",
-    "lockfile-lint": "^4.1.0",
+    "lockfile-lint": "^4.3.7",
     "lodash": "^4.17.5",
     "memory-fs": "^0.4.1",
-    "semantic-release": "^17.0.7",
+    "semantic-release": "^17.1.2",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0"
   },
@@ -69,6 +74,20 @@
     }
   },
   "release": {
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "main",
+      "next",
+      "next-major",
+      {
+        "name": "beta",
+        "prerelease": true
+      },
+      {
+        "name": "alpha",
+        "prerelease": true
+      }
+    ],
     "plugins": [
       "@semantic-release/commit-analyzer",
       "@semantic-release/release-notes-generator",
@@ -76,7 +95,6 @@
       "@semantic-release/npm",
       "@semantic-release/git",
       "@semantic-release/github"
-    ],
-    "branch": "master"
+    ]
   }
 }
