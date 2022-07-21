@@ -63,7 +63,7 @@
     "lockfile-lint": "^4.3.7",
     "lodash": "^4.17.5",
     "memory-fs": "^0.4.1",
-    "semantic-release": "^17.1.2",
+    "semantic-release": "^19.0.3",
     "style-loader": "^0.21.0",
     "webpack": "^4.6.0"
   },
