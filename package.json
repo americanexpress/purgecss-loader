@@ -30,7 +30,7 @@
       "<rootDir>/commitlint.config.js"
     ]
   },
-  "author": "Jimmy King <jimmy.king@aexp.com> (https://github.com/10xLaCroixDrinker)",
+  "author": "Jamie King <jamie.king@aexp.com> (https://github.com/10xLaCroixDrinker)",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/americanexpress/purgecss-loader/issues"
