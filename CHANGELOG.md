@@ -1,3 +1,15 @@
+# [3.0.0](https://github.com/americanexpress/purgecss-loader/compare/v2.0.0...v3.0.0) (2023-02-27)
+
+
+### Features
+
+* **node:** update support for node 16 ([#51](https://github.com/americanexpress/purgecss-loader/issues/51)) ([e183819](https://github.com/americanexpress/purgecss-loader/commit/e18381955542313e32655f6abdeacf0af6d48ca4))
+
+
+### BREAKING CHANGES
+
+* **node:** drop support for node 8, 10, 12, 14
+
 # [2.0.0](https://github.com/americanexpress/purgecss-loader/compare/v1.0.0...v2.0.0) (2020-04-28)
 
 
