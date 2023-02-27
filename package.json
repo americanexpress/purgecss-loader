@@ -37,7 +37,7 @@
   },
   "homepage": "https://github.com/americanexpress/purgecss-loader#readme",
   "dependencies": {
-    "loader-utils": "^1.1.0",
+    "loader-utils": "^1.4.2",
     "purgecss": "^2.1.2"
   },
   "devDependencies": {
