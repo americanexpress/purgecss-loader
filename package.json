@@ -59,7 +59,7 @@
     "eslint": "^4.19.1",
     "eslint-config-amex": "^7.1.1",
     "husky": "^3.1.0",
-    "jest": "^23.6.0",
+    "jest": "^29.4.3",
     "lockfile-lint": "^4.3.7",
     "lodash": "^4.17.5",
     "memory-fs": "^0.4.1",
