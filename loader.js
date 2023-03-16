@@ -17,8 +17,8 @@ const { getOptions } = require('loader-utils');
 
 module.exports = async function purifyCssLoader(content) {
   const {
-    paths, extractors = [], fontFace = false, keyframes = false, variables = false, whitelist,
-    whitelistPatterns, whitelistPatternsChildren,
+    paths, extractors = [], fontFace = false, keyframes = false, variables = false, safelist = [],
+    blocklist = [],
   } = getOptions(this);
   const purgeCSSResult = await new PurgeCSS().purge({
     content: paths,
@@ -27,9 +27,8 @@ module.exports = async function purifyCssLoader(content) {
     fontFace,
     keyframes,
     variables,
-    whitelist,
-    whitelistPatterns,
-    whitelistPatternsChildren,
+    safelist,
+    blocklist,
   });
   return purgeCSSResult[0].css;
 };

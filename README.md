@@ -59,7 +59,7 @@ module.exports = {
             loader: '@americanexpress/purgecss-loader',
             options: {
               paths: [path.join(somePath, 'src/**/*.{js,jsx}')],
-              whitelistPatternsChildren: [/:global$/],
+              safelist: [/:global$/],
             },
           },
         ],
@@ -82,9 +82,8 @@ the example to express this loader's compatibility.
 | `fontFace`   | `boolean` (default: false) see [options]     | `false`  |
 | `keyframes`  | `boolean` (default: false) see [options] | `false`  |
 | `variables`  | `boolean` (default: false) see [options] | `false`  |
-| `whitelist`  | `string[]` see [options]| `false`  |
-| `whitelistPatterns` | `Array<RegExp>` see [options] | `false`  |
-| `whitelistPatternsChildren` | `Array<RegExp>` see [options] | `false`  |
+| `safelist`  | `UserDefinedSafelist` see [options]| `false`  |
+| `blocklist` | `StringRegExpArray` see [options] | `false`  |
 
 [glob]: https://github.com/isaacs/node-glob
 [purgecss extractors]: https://www.purgecss.com/extractors.html
