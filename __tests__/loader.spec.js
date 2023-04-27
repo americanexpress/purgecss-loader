@@ -19,9 +19,10 @@ const findIndex = require('lodash/findIndex');
 
 jest.setTimeout(10000);
 
-const runLoader = ({
-  entry = '../__fixtures__/Component.jsx',
-} = {}, safelist) => {
+const runLoader = (safelist,
+  {
+    entry = '../__fixtures__/Component.jsx',
+  } = {}) => {
   const compiler = webpack({
     context: __dirname,
     entry,
@@ -97,7 +98,7 @@ describe('purgecss loader', () => {
 
   it('should not strip safelisted global classes', async () => {
     const componentEntry = { entry: '../__fixtures__/ComponentGlobal.jsx' };
-    const stats = await runLoader(componentEntry, [/:global$/]);
+    const stats = await runLoader([/:global$/], componentEntry);
     const { modules } = stats.toJson();
     const cssModuleIndex = findIndex(modules, {
       name: '../node_modules/css-loader??ref--5-1!../loader.js??ref--5-2!../__fixtures__/root.scss',
