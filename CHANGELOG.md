@@ -1,3 +1,23 @@
+# [4.0.0](https://github.com/americanexpress/purgecss-loader/compare/v3.0.0...v4.0.0) (2023-05-01)
+
+
+* Feat/upgrade purgecss to version 4 (#63) ([2a847fa](https://github.com/americanexpress/purgecss-loader/commit/2a847fafde567b2746fad60a410f134f48cba209)), closes [#63](https://github.com/americanexpress/purgecss-loader/issues/63) [#62](https://github.com/americanexpress/purgecss-loader/issues/62)
+
+
+### BREAKING CHANGES
+
+* various whitelist options replaced with safelist
+
+Co-authored-by: Scott McIntyre <scott.mcintyre@aexp.com>
+
+* chore(update-eslint): upgrade eslint related deps and update test format
+
+* feat(purgecss): upgrade to purgecss4
+
+* feat(purgecss): add to gitignore
+
+* feat(purgecss): fix gitignore
+
 # [3.0.0](https://github.com/americanexpress/purgecss-loader/compare/v2.0.0...v3.0.0) (2023-02-27)
 
 
