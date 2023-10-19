@@ -51,7 +51,7 @@
     "@semantic-release/npm": "^7.0.6",
     "@semantic-release/release-notes-generator": "^9.0.1",
     "amex-jest-preset": "^6.1.0",
-    "babel-eslint": "^8.2.3",
+    "babel-eslint": "^10.1.0",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.24.1",
