@@ -1,18 +1,16 @@
-
 <h1 align="center">
+
+  [One App is now InnerSource](https://github.com/americanexpress/one-app/issues/1393)
+
+  <hr/>
+
   <img src='https://github.com/americanexpress/purgecss-loader/raw/main/purgecss-loader.png' alt="purgecss-loader - One Amex" width='50%'/>
 </h1>
 
 [![npm version](https://badge.fury.io/js/%40americanexpress%2Fpurgecss-loader.svg)](https://badge.fury.io/js/%40americanexpress%2Fpurgecss-loader)
-![Health Check](https://github.com/americanexpress/purgecss-loader/workflows/Health%20Check/badge.svg)
 
 > This [Webpack](https://github.com/webpack/webpack) loader uses [purgecss](https://github.com/FullHuman/purgecss)
 to strip unused selectors from your CSS.
-
-## 👩‍💻 Hiring 👨‍💻
-
-> Want to get paid for your contributions to `purgecss-loader`?
-> Send your resume to oneamex.careers@aexp.com
 
 ## 📖 Table of Contents
 
